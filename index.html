@@ -45,14 +45,18 @@
 > .                 	print '\n'
         </code></pre>
     </details>
-    </p>
+    <br><br>
+
+    <label>
+        Run on Update<input type="checkbox" id="runOnUpdate" >
+    </label>
 
     <hr><h3>Input</h3>
     <textarea id="input"></textarea><br>
     <button onclick="brainfuck(document.getElementById('input').value)">Run</button><br>
     <hr>
     <h3>Output</h3>
-    <textarea id="output" readonly></textarea><br>
+    <textarea id="output" onchange="oc()" readonly></textarea><br>
     <button onclick="document.getElementById('output').innerHTML = ''">Clear</button>
 
     <script src="js/compiler.js"></script>
