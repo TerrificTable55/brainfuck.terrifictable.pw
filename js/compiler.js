@@ -29,7 +29,7 @@ function brainfuck(program) {
             tape[ptr]--;
             break;
         case ',':
-            tape[ptr] = prompt()[0].charCodeAt()
+            tape[ptr] = prompt()[0].charCodeAt(0)
             break;
         case '.':
             console.log(String.fromCharCode(tape[ptr]));
@@ -60,4 +60,12 @@ function brainfuck(program) {
     
     document.getElementById("output").innerHTML += "\n---END---";
     console.log("\n---END---");
+}
+
+function oc() {
+    const checked = document.querySelector('#runOnUpdate').checked;
+
+    if (checked) {
+        brainfuck(document.getElementById("input").value);
+    }
 }
