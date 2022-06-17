@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <title>Brainfuck Compiler</title>
+</head>
+<body>
+
+    <h1>Brainfuck Compiler</h1><hr>
+
+    <p>
+        Brainf*ck is close to being the simplest programming language possible, with only 8 instructions:<br>
+        <pre id="instructions"><code>> < + - , . [ ]</code></pre><br>
+        These instructions move an internal data pointer, increment and decrement the value at the data pointer, input and output data, and provide simple looping.<br>
+
+        As an aside: brainf*ck was written with the intent of having a language with the smallest-possible compiler. Many compilers for brainf*ck are smaller than 200 bytes! <a href="http://en.wikipedia.org/wiki/Brainfuck#Language_design"></a>.<br>    
+    </p>
+    
+    <p>
+    <details>
+        <summary>Hello World Script</summary>
+        <pre><code>
++++++ +++++         		initialize counter (cell #0) to 10
+[                   		set the next four cells to 70 100 30 and 10
+     > +++++ ++          	add  7 to cell #1
+     > +++++ +++++       	add 10 to cell #2
+     > +++               	add  3 to cell #3
+     > +                 	add  1 to cell #4
+     <<<< -              	decrement counter (cell #0)
+]
+> ++ .              	print 'H'  (H = ASC (72))
+> + .               	print 'e'  (e = ASC (101))
++++++ ++ .          	print 'l'
+.                   	print 'l'
++++ .               	print 'o'
+> ++ .              	print ' '
+<< +++++ +++++ +++++ .  print 'W'
+> .                 	print 'o'
++++ .               	print 'r'
+----- - .           	print 'l'
+----- --- .         	print 'd'
+> + .               	print '!'
+> .                 	print '\n'
+        </code></pre>
+    </details>
+    </p>
+
+    <hr><h3>Input</h3>
+    <textarea id="input"></textarea><br>
+    <button onclick="brainfuck(document.getElementById('input').value)">Run</button><br>
+    <hr>
+    <h3>Output</h3>
+    <textarea id="output" readonly></textarea><br>
+    <button onclick="document.getElementById('output').innerHTML = ''">Clear</button>
+
+    <script src="js/compiler.js"></script>
+
+</body>
+</html>
